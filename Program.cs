@@ -122,7 +122,7 @@ namespace GameForLearningFeature
 
 
 
-            //float delta = reward + gamma * GetQValue(blocks, (uint)action) - q;
+            //float delta = reward + gamma * GetQValue(blocks) - q;
 
             //UpdateWeights(delta);
             preAction = (uint)action;
@@ -155,7 +155,7 @@ namespace GameForLearningFeature
 
         }
         /*At current blocks is our game state.*/
-        static float GetQValue(List<Block> blocks, uint action)
+        static float GetQValue(List<Block> blocks)
         {
             float value = 0;
             for (int i = 0; i < fCount; i++)
@@ -242,7 +242,7 @@ namespace GameForLearningFeature
         {
 
 
-            float q = GetQValue(blocks, preAction);
+            float q = GetQValue(blocks);
             
             ClearGamePanel();
             UpdateEnvironment();
